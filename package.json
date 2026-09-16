@@ -1,0 +1,23 @@
+{
+  "name": "shahveer-coder-portfolio",
+  "version": "1.0.0",
+  "description": "Shahveer Coder — Full Stack Developer Portfolio with Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "freelance",
+    "full-stack",
+    "web-developer",
+    "shahveer-coder"
+  ],
+  "author": "Shahveer Coder",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
