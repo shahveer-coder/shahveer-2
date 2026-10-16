@@ -4,6 +4,24 @@ A complete, modern **Full Stack Developer portfolio** with a working **Node.js +
 
 ![Node](https://img.shields.io/badge/Node.js-Express-green) ![License](https://img.shields.io/badge/License-MIT-blue) ![Status](https://img.shields.io/badge/Status-Live-brightgreen)
 
+## 🕌 Badshahi Mosque — Animated Travel Guide
+
+A second, fully animated site lives at **`/destination/`** — a cinematic guide to the
+Badshahi Mosque, Lahore (built 1671–1673 by Emperor Aurangzeb Alamgir).
+
+| | |
+| --- | --- |
+| **Stack** | HTML + CSS + GSAP 3 (ScrollTrigger) + Lenis smooth scroll, no build step |
+| **Animations** | SVG preloader, custom cursor, masked hero reveal, scroll-scrubbed word highlight, vertical timeline, count-up stats, pinned horizontal gallery, lightbox, accordion, magnetic buttons, parallax |
+| **Design** | Ink / sandstone / marble / gold palette, WCAG-conscious contrast, `prefers-reduced-motion` support |
+| **Content** | History timeline, architecture breakdown, visitor guide (hours, entry, dress code), OpenStreetMap embed, nearby sights |
+
+```bash
+npm start
+# portfolio  → http://localhost:3000
+# mosque     → http://localhost:3000/destination/
+```
+
 ## ✨ Features
 
 - 🎨 Modern dark-theme responsive design (mobile-first)
