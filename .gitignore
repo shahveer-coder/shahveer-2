@@ -2,4 +2,4 @@ node_modules/
 image-search/
 .env
 .DS_Store
-data/messages.json
+*.log
