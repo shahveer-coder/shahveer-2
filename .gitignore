@@ -1,0 +1,5 @@
+node_modules/
+image-search/
+.env
+.DS_Store
+*.log
