@@ -1,38 +1,48 @@
-# 🕌 Badshahi Mosque, Lahore — Animated Travel Guide
+# 🏋️ Power House Gym — DHA Phase 3, Lahore
 
-An **animated single-page travel guide** to the Badshahi Mosque in the Walled City of Lahore —
-the last great mosque of the Mughal Empire, raised in 1671–1673 by Emperor Aurangzeb Alamgir.
+A **premium, multi-page website** built for **Power House Gym, Y-Block DHA Phase 3, Lahore** —
+a real gym that lives on Facebook & Instagram and had no website of its own.
 
-Built with **HTML + CSS + GSAP 3 (ScrollTrigger) + Lenis** smooth scroll. No build step, no
-framework, no CDN dependency — the animation libraries are vendored in `public/vendor/`.
+> **The gym (real):** 2nd Floor, Building #179, W Street 13, above ChenOne, Sector Y,
+> DHA Phase 3, Lahore · 📞 0321 7593916 · Mon–Sat 7 AM – 11 PM
+> Instagram: [@powerhousegymlahore](https://www.instagram.com/powerhousegymlahore/) ·
+> Facebook: [PowerHouseGymLahore](https://www.facebook.com/PowerHouseGymLahore/)
 
-![GSAP](https://img.shields.io/badge/GSAP-3.15-0EA5E9) ![Lenis](https://img.shields.io/badge/Lenis-1.3-8A5CF5) ![Node](https://img.shields.io/badge/Node.js-Express-green) ![License](https://img.shields.io/badge/License-MIT-blue)
+Built with **HTML + CSS + GSAP 3 (ScrollTrigger) + Lenis**. No build step, no framework,
+no CDN dependency — animation libraries are vendored in `public/vendor/`.
 
-## ✨ What's in it
+## 📄 Pages (7 — not a one-pager)
 
-- **Preloader** — a Mughal arch drawn stroke-by-stroke in SVG with a 00→100 counter
-- **Custom cursor** — gold ring + dot that grows over links and shows a "View" label on images
-- **Hero** — line-by-line masked headline reveal, Nastaliq Urdu title, parallax + Ken Burns background, count-up facts
-- **Scroll-scrubbed story** — the opening paragraph lights up word by word as you read
-- **History timeline** — eight turning points (1671 → today) on a rail that fills as you scroll
-- **Architecture section** — a light marble chapter with count-up stats and hover-zoom details
-- **Parallax quote** — a full-bleed sunset moment with a scrubbed statement
-- **Horizontal gallery** — pinned on desktop, native swipe on mobile, with a keyboard-navigable lightbox
-- **Visitor guide** — hours, entry, dress code, photography, plus an animated FAQ accordion
-- **Location** — OpenStreetMap embed, coordinates and a Google Maps hand-off
-- **Nearby sights** — Lahore Fort, Hazuri Bagh, Minar-e-Pakistan, Wazir Khan Mosque
+| Page | What's on it |
+| --- | --- |
+| `index.html` | 3D hero stage, marquee, club intro, programs preview, stats + timetable, coaching strip, FAQ + trial CTA |
+| `about.html` | The club's story — floor, ladies section, equipment care, three working principles |
+| `programs.html` | Strength, Fat Loss/Cardio, Kickboxing/Zumba/Aerobics/Cycling, Personal Training, Nutrition + BMI calculator + weekly schedule |
+| `trainers.html` | Coaching team by specialty + how coaching works (assessment → plan → monthly check) |
+| `pricing.html` | Monthly / 3-month toggle, three plans from PKR 7,500/mo, value breakdown, pricing FAQ |
+| `gallery.html` | Filterable gallery (Floor / Strength / Cardio / Classes / Coaching) with lightbox |
+| `contact.html` | Address, timings, map embed, directions + free-trial form that hands off to WhatsApp |
 
 ## 🎨 Design
 
 | Token | Value | Use |
 | --- | --- | --- |
-| Ink | `#100C0A` | Base background |
-| Sandstone | `#A8452C` | Accent, links, rules |
-| Marble | `#F4EEE4` | Primary text, light sections |
-| Gold | `#D9A441` | Highlights, numerals |
+| Charcoal | `#0E100E` | Base background |
+| Bone | `#F3EFE6` | Primary text / light sections |
+| Muted brass | `#C8A45D` | Accent (used sparingly, large text) |
+| Sage | `#8A9A7B` | Secondary pill / ladies batches |
 
-Typography: **Cormorant Garamond** (display) · **Inter** (UI) · **Noto Nastaliq Urdu** (Urdu).
-Contrast checked against WCAG AA, keyboard accessible, and `prefers-reduced-motion` is respected.
+Typography: **Fraunces** (display serif) · **Archivo** (UI/body).
+Copy is written in a grounded Roman-Urdu + English voice with real DHA/Y-Block detail —
+no generic template lines. All photos are real gym photography (no AI-generated imagery).
+
+## ⚡ Motion — heavy feel, light cost
+
+- 3D hero stage with mouse-depth layers + floating info cards (rAF-throttled, transform-only)
+- 3D tilt cards with cursor-tracked shine, GSAP scroll reveals, parallax images
+- Count-up stats, marquee, magnetic-feeling buttons, page wipe, custom cursor (desktop only)
+- Performance guards: `prefers-reduced-motion` respected, Lenis only on desktop,
+  lazy images everywhere except the hero, no WebGL — the site stays smooth on weak phones.
 
 ## 🚀 Run locally
 
@@ -44,43 +54,11 @@ npm start
 
 ## 📡 API
 
-| Method | Endpoint      | Description      |
-| ------ | ------------- | ---------------- |
-| GET    | `/api/health` | Service heartbeat |
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | `/api/health` | Service heartbeat + gym info |
 
-## 🌍 Deploy
+## 📝 Note for the gym
 
-Works as-is on **Render**, **Railway**, **Fly.io** or **Vercel** (a `vercel.json` is included).
-
-1. Push to GitHub
-2. Connect the repo on [render.com](https://render.com) → New Web Service
-3. Build command: `npm install` · Start command: `npm start`
-
-Because the site is fully static, you can also drop `public/` on any static host (Netlify,
-GitHub Pages, Cloudflare Pages) with no server at all.
-
-## 📁 Structure
-
-```
-├── server.js               # Express static host + /api/health
-├── vercel.json             # Serverless config
-└── public/
-    ├── index.html          # The guide
-    ├── style.css           # Design system + layout
-    ├── app.js              # Animation engine
-    ├── images/             # 12 optimized photos
-    └── vendor/             # gsap, ScrollTrigger, lenis (local)
-```
-
-`gsap` and `lenis` are listed as dev dependencies only — they are used to refresh the
-committed files in `public/vendor/`, not at runtime.
-
-## 📄 Sources
-
-Badshahi Mosque Authority (Govt. of Punjab) · UNESCO World Heritage Centre (Fort & Shalimar
-Gardens, Lahore) · Wikipedia · Encyclopaedia Britannica · Vacayadviser.
-Photography: Pexels, Wikimedia Commons and public archives.
-
-## 📄 License
-
-MIT — free to use.
+Rates, class times and coach availability shown here reflect public listings
+(Facebook/Instagram/directories) — confirm current details at the desk: **0321 7593916**.
