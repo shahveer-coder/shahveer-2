@@ -1,20 +1,19 @@
 {
-  "name": "badshahi-mosque-guide",
+  "name": "power-house-gym-lahore",
   "version": "1.0.0",
-  "description": "Badshahi Mosque, Lahore — an animated travel guide (HTML + CSS + GSAP + Lenis)",
+  "description": "Power House Gym, DHA Phase 3 Lahore — premium multi-page gym website (HTML + CSS + GSAP + Lenis)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
   "keywords": [
-    "badshahi-mosque",
-    "lahore",
-    "animated-website",
+    "power-house-gym",
+    "dha-lahore",
+    "gym-website",
     "gsap",
     "scrolltrigger",
-    "travel-guide",
-    "mughal-heritage"
+    "pakistan"
   ],
   "author": "Shahveer Coder",
   "license": "MIT",
