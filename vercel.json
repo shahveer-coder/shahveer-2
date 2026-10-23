@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "other",
   "buildCommand": "echo \"Cafe Sierra - static site, no build step required\"",
   "outputDirectory": ".",
   "cleanUrls": true,
