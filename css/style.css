@@ -9,3 +9,25 @@ footer{background:#0f0906;padding:50px 5%;display:grid;grid-template-columns:rep
 input,textarea,select{width:100%;padding:13px;margin:8px 0 16px;border-radius:10px;border:1px solid #463322;background:#241810;color:#fff}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #382818;text-align:left;font-size:14px}
 .reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.visible{opacity:1;transform:none}
 @media(max-width:700px){.nav nav{display:none}.hero{padding-top:100px}}
+
+/* ===== v2 Animations & Polish ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{background-size:110%}to{background-size:120%}}
+@keyframes floatPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes goldShine{0%{background-position:0%}100%{background-position:200%}}
+.hero{animation:heroZoom 18s ease-in-out infinite alternate}
+.hero h1,.hero p,.hero .btn,.hero .badge{animation:fadeUp .9s ease both}
+.hero h1{animation-delay:.15s}.hero p{animation-delay:.3s}
+.card{overflow:hidden}
+.card img{transition:transform .6s ease}
+.card:hover img{transform:scale(1.08)}
+.card:hover{box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.gallery img{transition:.5s}
+.gallery img:hover{transform:scale(1.04);filter:brightness(1.1)}
+.wa-float{animation:floatPulse 2s infinite}
+.btn{background:linear-gradient(110deg,#c9a227,#e8c87a,#c9a227);background-size:200%;animation:goldShine 4s linear infinite}
+.logo{letter-spacing:.5px}
+.review{transition:.4s}.review:hover{transform:translateY(-5px);border-color:#c9a227}
+.nav{animation:fadeUp .6s ease}
+html{scroll-behavior:smooth}
+::selection{background:#c9a227;color:#170f0a}

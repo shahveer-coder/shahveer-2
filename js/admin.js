@@ -2,10 +2,9 @@
 document.addEventListener('DOMContentLoaded',async()=>{
  const loginForm=document.getElementById('loginForm');
  if(loginForm){ loginForm.onsubmit=async(e)=>{e.preventDefault(); const email=document.getElementById('email').value.trim(); const pass=document.getElementById('password').value;
-   if(email==='admin@cafesierra.com'&&pass==='demo123'){ localStorage.setItem('sierra_admin','demo'); location.href='admin-dashboard.html'; return;}
-   try{ const {error}=await sb.auth.signInWithPassword({email,password:pass}); if(error) throw error; location.href='admin-dashboard.html'; }catch(err){ document.getElementById('loginMsg').textContent='Login failed: '+err.message+' (Demo: admin@cafesierra.com / demo123)'; } }; }
+   try{ const {error}=await sb.auth.signInWithPassword({email,password:pass}); if(error) throw error; location.href='admin-dashboard.html'; }catch(err){ document.getElementById('loginMsg').textContent='Login failed: '+err.message; } }; }
  if(document.getElementById('stats')){
-   if(!localStorage.getItem('sierra_admin')){ try{ const {data}=await sb.auth.getSession(); if(!data.session){ /* allow demo view but warn */ document.getElementById('demoNote').style.display='block'; } }catch(e){} }
+   try{ const {data}=await sb.auth.getSession(); if(!data.session){ location.href='admin-login.html'; return; } }catch(e){ location.href='admin-login.html'; return; }
    let items=[]; try{ const {data}=await sb.from('menu_items').select('*').order('id'); if(data) items=data; }catch(e){}
    document.getElementById('statMenu').textContent=items.length||'20';
    try{ const m=await sb.from('messages').select('*',{count:'exact'}); document.getElementById('statMsg').textContent=m.count??0; const o=await sb.from('orders').select('*',{count:'exact'}); document.getElementById('statOrders').textContent=o.count??0; }catch(e){document.getElementById('statMsg').textContent='0';document.getElementById('statOrders').textContent='0';}
@@ -14,4 +13,4 @@ document.addEventListener('DOMContentLoaded',async()=>{
  }
 });
 async function delItem(id){ if(!confirm('Delete this item?'))return; const {error}=await sb.from('menu_items').delete().eq('id',id); alert(error?'Error: '+error.message:'Deleted'); location.reload(); }
-async function logout(){ try{await sb.auth.signOut()}catch(e){} localStorage.removeItem('sierra_admin'); location.href='admin-login.html'; }
+async function logout(){ try{await sb.auth.signOut()}catch(e){} location.href='admin-login.html'; }
